@@ -1,5 +1,4 @@
 import os
-from path import Path
 from source import utils
 from torchvision import transforms
 from torch.utils.data import Dataset, DataLoader
