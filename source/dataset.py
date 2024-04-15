@@ -22,11 +22,11 @@ class PointCloudData(Dataset):
         self.valid = valid
         self.files = []
         for category in self.classes.keys():
-            new_dir = root_dir/Path(category)/folder
+            new_dir = os.path.join(root_dir,category,folder)
             for file in os.listdir(new_dir):
                 if file.endswith('.off'):
                     sample = {}
-                    sample['pcd_path'] = new_dir/file
+                    sample['pcd_path'] = os.path.join(new_dir,file)
                     sample['category'] = category
                     self.files.append(sample)
 
